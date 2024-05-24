@@ -1,11 +1,14 @@
 import { Component } from "react";
+import Hello from "./components/Hello";
+
+
 
 class App extends Component {
   // override the render method
   render() {
     return (
       <div>
-      <h1>My React App</h1>
+      <Hello/>
       </div>
     );
   }
