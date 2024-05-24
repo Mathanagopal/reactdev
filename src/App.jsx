@@ -1,26 +1,14 @@
-const App =() =>{
-  const isLoggedIn = false;
-  // if(isLoggedIn){
-  //   return <h1>Welcome Back!</h1>;
-  // }
-  // else {
-  //   return <h1>Please log in.</h1>;
-  // }
-  // return(
-  //   <div>
-  //       {
-  //         isLoggedIn ? <h1>Welcome back</h1> : <h1>Please Login</h1>
-  //       }
+import { Component } from "react";
 
-  //   </div>
-  // )
-  return(
-    <div>
-        {isLoggedIn && <h1>Welcome back!</h1>}
-        {!isLoggedIn && <h1>Please Login!</h1>}
-
-    </div>
-  )
-
+class App extends Component {
+  // override the render method
+  render() {
+    return (
+      <div>
+      <h1>My React App</h1>
+      </div>
+    );
+  }
 }
+
 export default App;
