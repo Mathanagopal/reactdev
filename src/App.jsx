@@ -2,14 +2,20 @@ import {useEffect, useState} from "react";
 
 const App = () => {
   let [count,seCount] = useState(0);
+  let [increment,setIncrement] = useState(0);
 
-  //runs only once when the component is mounted and whenever any state with in the component
-  useEffect() =>{
-    console.log('Component mounted');
-  }
+  //runs only once when the component is mounted.
+  useEffect(() =>{
+    //console.log('Run when the component is mounted and count is updated');
+    console.log('useEffect called');
+    console.log('Count:', count);
+    console.log('Increment', increment)
+
+  },[count]);
 
 const handleIncrement =() =>{
   seCount(count + 1);
+  setIncrement(increment+1);
 }
 const handleDecrement =() =>{
   seCount(count - 1);
