@@ -1,55 +1,41 @@
 import React, { Component } from 'react'
 
-export class App extends Component {
-
-  constructor(props){
-    super(props); //Call the constructor of the parent
-    this.state ={
-      counter:10
-    }
-  }
+class Hello extends Component {
 
   componentDidMount() {
-    console.log('Compoen did mount');
+    console.log('Hello Component Mounted');
+  }
+  componentWillUnmount(){
+    console.log('Hello component unmount');
+  }
+  render(){
+    return (
+      <h1>Hello World!</h1>
+    )
   }
 
-  componentDidUpdate() {
-    console.log('Compoen did Update');
-  }
+}
 
-  componentWillUnmount() {
-    console.log('Compoen will unmount');
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      showHello:true
+    }
   }
-
-  handeIncrement = () => {
-    //update the state using setState method
-    if(this.state.counter<19)
-      {
+  handleToggle =() =>{
     this.setState({
-      counter:this.state.counter+1
+      showHello: !this.setState.showHello
     })
   }
-  }
-  
-  handeDecrement = () => {
-    //update the state using setState method
-    this.setState({
-      counter:this.state.counter-1
-    })
-  }
-
-  render() {
-    let counter =100;
-    console.log(this.state);
-  
+  render(){
     return (
       <div>
-        <p>COUNT: {this.state.counter}</p>
-        <button onClick={this.handeIncrement}>INCREMENT</button>
-        <button onClick={this.handeDecrement}>DECEMENT</button>
+      <button onClick={history.handleToggle}>Toggle Hello</button>
+      {this.state.showHello && <Hello/>}
       </div>
     )
   }
 }
 
-export default App
+export default App;
