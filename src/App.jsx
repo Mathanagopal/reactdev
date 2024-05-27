@@ -1,41 +1,26 @@
-import React, { Component } from 'react'
+import {useState} from "react";
 
-class Hello extends Component {
+const App = () => {
+  let [count,seCount] = useState(0);
 
-  componentDidMount() {
-    console.log('Hello Component Mounted');
-  }
-  componentWillUnmount(){
-    console.log('Hello component unmount');
-  }
-  render(){
-    return (
-      <h1>Hello World!</h1>
-    )
-  }
-
+const handleIncrement =() =>{
+  seCount(count + 1);
+}
+const handleDecrement =() =>{
+  seCount(count - 1);
+}
+const handleRest =() =>{
+  seCount(0);
 }
 
-export class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state ={
-      showHello:true
-    }
-  }
-  handleToggle =() =>{
-    this.setState({
-      showHello: !this.setState.showHello
-    })
-  }
-  render(){
-    return (
-      <div>
-      <button onClick={history.handleToggle}>Toggle Hello</button>
-      {this.state.showHello && <Hello/>}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+    <button onClick={handleIncrement}>Increment</button>
+    <button onClick={handleDecrement}>Decrement</button>
+    <button onClick={handleRest}>Reset</button>
+    </div>
+  )
 }
 
-export default App;
+export default App
