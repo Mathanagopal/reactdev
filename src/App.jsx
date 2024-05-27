@@ -1,7 +1,12 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const App = () => {
   let [count,seCount] = useState(0);
+
+  //runs only once when the component is mounted and whenever any state with in the component
+  useEffect() =>{
+    console.log('Component mounted');
+  }
 
 const handleIncrement =() =>{
   seCount(count + 1);
